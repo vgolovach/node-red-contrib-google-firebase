@@ -25,11 +25,7 @@
   ],
   "node-red": {
     "nodes": {
-      "auth": "strapi/auth.js",
-      "once": "google-firebase/once.js",
-      "on": "google-firebase/on.js",
-      "update" : "google-firebase/update.js",
-      "config" : "google-firebase/config.js"
+      "auth": "strapi/auth.js"
     }
   },
   "author": "6th floor",
