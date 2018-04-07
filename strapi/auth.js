@@ -1,14 +1,19 @@
 module.exports = function(RED) {
       function OnFirebase(config) {
-            RED.nodes.createNode(this, config);
+            
+            RED.nodes.createNode(this);
+            
             var node = this;
-            var firebase = RED.nodes.getNode(config.firebase)
+
+            var identifier = this.credentials.identifier;
+            var password = this.credentials.password;
+
 
             node.on('input', function(msg) {
-                  firebaseAuth( msg );
+                  strapiAuth( msg );
             });
 
-            function firebaseAuth( msg ) {
+            function strapiAuth( msg ) {
                   firebase.app.auth().signInWithEmailAndPassword(config.user, config.password).then(function( result ) {
                         node.log("Session Opened...");
                         result.getIdToken().then(function(token) {

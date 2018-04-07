@@ -1,15 +1,15 @@
 <script type="text/javascript">
     RED.nodes.registerType('auth',{
-        category: 'firebase',
+        category: 'strapi',
         color: '#a6bbcf',
-        defaults: {
-           user : {value:'', required:true},
-           password: {value:'', required:true},
-           firebase:  {type:'config-firebase', required:true}
+        credentials: {
+           identifier : { required:true },
+           password: { required:true },
+           url:  { required:true }
         },
         inputs:1,
         outputs:1,
-        icon: "file.png",
+        icon: "db.png",
         label: function() {
             return this.name||"auth";
         }
@@ -19,13 +19,13 @@
 <script type="text/x-red" data-template-name="auth">
 
       <div class="form-row">
-              <label for="node-input-firebase"><i class="fa fa-database"></i> Firebase Config </label>
-              <input type="text" id="node-input-firebase">
+              <label for="node-input-strapi"><i class="fa fa-database"></i> Strapi Config </label>
+              <input type="text" id="node-input-strapi">
       </div>
 
       <div class="form-row">
-          <label for="node-input-user"><i class="icon-tag"></i> User </label>
-          <input type="text" id="node-input-user" placeholder="user">
+          <label for="node-input-identifier"><i class="icon-tag"></i> Identifier </label>
+          <input type="text" id="node-input-identifier" placeholder="identifier">
       </div>
 
       <div class="form-row">
@@ -36,5 +36,5 @@
 </script>
 
 <script type="text/x-red" data-help-name="auth">
-      <p>A simple node that converts the message payloads into all lower-case characters</p>
+      <p>Strapi Auth config</p>
 </script>
